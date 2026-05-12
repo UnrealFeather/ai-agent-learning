@@ -1,4 +1,4 @@
-from app.services.llm_service import ask_llm
+from app.services.intent_service import detect_intent
 
-reply = ask_llm("用一句话解释什么是 AI Agent")
+reply = detect_intent("帮我查订单 1001")
 print(reply)

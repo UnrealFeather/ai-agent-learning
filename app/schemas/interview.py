@@ -13,8 +13,10 @@ class InterviewQuestion(BaseModel):
     point: str = Field(description="考察点")
     reference_answer: str = Field(description="参考答案")
 
+
 class InterviewQuestionResponse(BaseModel):
-    question: list[InterviewQuestion] = Field(description="面试问题列表")
+    questions: list[InterviewQuestion] = Field(description="面试问题列表")
+
 
 class EvaluateAnswerRequest(BaseModel):
     question: str = Field(description="面试问题")

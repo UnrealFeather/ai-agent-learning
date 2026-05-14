@@ -20,3 +20,13 @@ def ask_llm(prompt: str) -> str:
     )
     print("settings.model", settings.model, settings.api_key, settings.base_url)
     return response.choices[0].message.content
+
+def ask_llm_messages(messages:list[dict])->str:
+    response = client.chat.completions.create(
+        model=settings.model,
+        messages=messages,
+        stream=False,
+        reasoning_effort="high",
+        extra_body={"thinking": {"type": "enabled"}},
+    )
+    return response.choices[0].message.content
